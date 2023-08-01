@@ -1,0 +1,8 @@
+[app]
+#database="cache.ddb"
+[eda]
+source="pypi.db"
+target="pypi.ddb"
+[motherduck]
+database="pypi"
+exclude_tables = ["penguins"]
