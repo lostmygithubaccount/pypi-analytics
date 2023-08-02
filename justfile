@@ -9,6 +9,9 @@ set dotenv-load
 default:
     just --list
 
+setup:
+    pip install -r requirements.txt
+
 # run
 run:
     @time python eda.py run
@@ -23,7 +26,7 @@ app:
 
 # download source data
 download:
-    gh release download --clobber -R sethmlarson/pypi-data -p './pypi.db.gz'
+    gh release download --clobber -R sethmlarson/pypi-data -p 'pypi.db.gz' -O pypi.db.gz
     gunzip pypi.db.gz -f
 
 

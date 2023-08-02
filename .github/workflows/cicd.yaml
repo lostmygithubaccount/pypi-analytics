@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: 3.11
       - name: install requirements
-        run: pip install -r requirements.txt
+        run: just setup
       - name: download data
         run: just download
         env:
