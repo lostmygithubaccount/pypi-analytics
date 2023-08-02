@@ -9,7 +9,7 @@ on:
       - main
   pull_request:
     paths:
-      - '.github/workflows/ci-build.yaml'
+      - '.github/workflows/cicd.yaml'
       - '**.py'
       - 'justfile'
 

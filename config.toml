@@ -1,5 +1,6 @@
 [app]
-database="app.ddb"
+#database="app.ddb"
+database="md:pypi"
 [eda]
 source="pypi.db"
 target="cache.ddb"
