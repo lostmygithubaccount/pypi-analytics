@@ -1,0 +1,40 @@
+name: cicd
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 1 * * *"
+  push:
+    branches:
+      - main
+  pull_request:
+    paths:
+      - '.github/workflows/ci-build.yaml'
+      - '**.py'
+      - 'justfile'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: extractions/setup-just@v1
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      - name: install requirements
+        run: pip install -r requirements.txt
+      - name: download data
+        run: just download
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: run analytics
+        run: just run
+      - name: export to MotherDuck
+        run: just export
+        env:
+          MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
+

@@ -13,10 +13,19 @@ default:
 run:
     @time python eda.py run
 
+# export data
+export:
+    @time python export_md.py
+
+# app
+app:
+    streamlit run metrics.py
+
 # download source data
 download:
-    gh release download --clobber -R sethmlarson/pypi-data -p 'pypi.db.gz'
+    gh release download --clobber -R sethmlarson/pypi-data -p './pypi.db.gz'
     gunzip pypi.db.gz -f
+
 
 # cleanup data
 clean:
