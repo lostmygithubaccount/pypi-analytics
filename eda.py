@@ -5,10 +5,8 @@ import toml
 import ibis
 import ibis.selectors as s
 import logging as log
-import seaborn as sns
 import plotly.io as pio
 import plotly.express as px
-import matplotlib.pyplot as plt
 
 from dotenv import load_dotenv
 from datetime import datetime, timedelta, date
@@ -19,13 +17,6 @@ log.basicConfig(level=log.INFO)
 
 ## config.toml
 config = toml.load("config.toml")["eda"]
-
-## matplotlib config
-plt.style.use("dark_background")
-
-## seaborn config
-sns.set(style="darkgrid")
-sns.set(rc={"figure.figsize": (12, 10)})
 
 ## plotly config
 pio.templates.default = "plotly_dark"
