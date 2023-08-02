@@ -47,7 +47,7 @@ with st.form(key="metrics"):
     )
     maintainer = st.text_input(
         "maintainer",
-        value=top_maintainers_by_downloads["name"].topk(1)["name"].to_pandas()[0],
+        value="aws",
     )
     update_button = st.form_submit_button(label="update")
 
