@@ -193,6 +193,14 @@ common_prefixes = (
     .order_by(ibis._["prefix"].desc())
     .limit(1000)
 )
+common_prefixes = (
+    maintainers.group_by("package_name")
+    .agg(ibis._.count().name("maintainers"))
+    # .filter(_.maintainers == 12)
+    .package_name.re_extract(r"^(\w*)-?", 1)
+    .name("prefix")
+    .topk(1000)
+)
 st.dataframe(common_prefixes, use_container_width=True)
 
 f"""
@@ -301,8 +309,7 @@ transitive_deps = con.sql(
     dialect="sqlite",
 )
 top_transitive_deps = (
-    transitive_deps
-    .group_by("dependency")
+    transitive_deps.group_by("dependency")
     .agg(ibis._["package"].nunique().name("n_dependents"))
     .order_by(ibis._["n_dependents"].desc())
     .limit(1000)
