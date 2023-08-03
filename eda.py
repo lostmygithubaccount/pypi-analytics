@@ -56,8 +56,8 @@ else:
     scorecard_checks = memcon.table("scorecard_checks")
 
     # TODO: fix pending issue (https://github.com/duckdblabs/sqlite_scanner/issues/47)
-    packages = packages.drop("yanked", "has_binary_wheel", "has_vulnerabilities").drop(
-        "in_google_assured_oss"
+    packages = packages.drop(
+        "yanked", "has_binary_wheel", "has_vulnerabilities", "in_google_assured_oss"
     )
 
     con.create_table("packages", packages.to_pyarrow(), overwrite=True)

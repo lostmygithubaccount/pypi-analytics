@@ -29,7 +29,6 @@ download:
     gh release download --clobber -R sethmlarson/pypi-data -p 'pypi.db.gz' -O pypi.db.gz
     gunzip pypi.db.gz -f
 
-
 # cleanup data
 clean:
     -rm *.ddb* || true
