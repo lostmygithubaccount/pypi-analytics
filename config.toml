@@ -3,6 +3,7 @@
 database="md:pypi"
 [eda]
 source="pypi.db"
-target="cache.ddb"
+#target="cache.ddb"
+target="md:pypi"
 [motherduck]
 database="pypi"
