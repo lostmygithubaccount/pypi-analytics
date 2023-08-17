@@ -11,6 +11,7 @@ on:
     paths:
       - '.github/workflows/cicd.yaml'
       - '**.py'
+      - 'requirements.txt'
       - 'justfile'
 
 permissions:

@@ -9,12 +9,17 @@ set dotenv-load
 default:
     just --list
 
+# install dependencies
 setup:
     pip install -r requirements.txt
 
+# eda
+eda:
+    ipython -i eda.py
+
 # run
 run:
-    @time python eda.py run
+    @time python transform.py
 
 # export data
 export:
