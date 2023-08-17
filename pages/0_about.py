@@ -159,7 +159,7 @@ This checks out the repository, sets up the Python environment, ingests the data
 
 It runs on PRs (that change relevant files), every day, and on a manual trigger.
 
-With that, data ingestion and transformation is automated. All that's left is to deploy with app to Stramlit Community Cloud, which is just a few clicks in their GUI!
+With that, data ingestion and transformation is automated. All that's left is to deploy with app to Streamlit Community Cloud, which is just a few clicks in their GUI!
 
 ## Next steps
 
