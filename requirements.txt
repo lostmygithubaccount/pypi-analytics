@@ -1,10 +1,4 @@
-# python
 python-dotenv
-
-# data
-ibis-framework[duckdb,polars,deltalake,bigquery]
-
-# viz
+ibis-framework[duckdb]
 plotly
 streamlit
-

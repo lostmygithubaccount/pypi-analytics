@@ -30,6 +30,8 @@ scorecard_checks = con.table("scorecard_checks")
 # display metrics
 """
 # PyPI metrics
+
+:red[**Warning**:] this is a work in progress, updates needed.
 """
 # variables
 with st.form(key="metrics"):
