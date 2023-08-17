@@ -19,7 +19,7 @@ st.set_page_config()
 f"""
 # Demo: Ibis + DuckDB + MotherDuck + Streamlit + GitHub
 
-**Work in progress*
+**Work in progress**
 
 ## What?
 
