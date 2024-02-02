@@ -1,4 +1,4 @@
 python-dotenv
-ibis-framework[duckdb]
+ibis-framework[duckdb] @ git+https://github.com/ibis-project/ibis
 plotly
 streamlit
